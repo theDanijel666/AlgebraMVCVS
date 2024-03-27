@@ -1,0 +1,84 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model MVC_uvod.Models.Osoba
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2> Pozdrav svima, ja sam pogled vezan s metodom @ViewBag.Title </h2>
+<hr />
+<p>@ViewBag.Ime</p>
+
+@if (Model.Ime != null)
+{
+    <p>Ime = @Model.Ime</p>
+    <p>Prezime = @Model.Prezime</p>
+    <p>Datum Rođenja = @Model.DatumRodjenja.ToString("dd.MM.yyyy")</p>
+}
+else
+{
+    <p>Majstore, nema nikakvih podataka! Unesi nešta:</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col"><h4>GET metoda</h4></th>
+                <th scope="col"><h4>POST metoda</h4></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <form method="get" action="@Url.Action("Index","Osoba")">
+                        <div class="form-group row">
+                            <label for="Ime" class="col-sm-2 col-form-label">Ime:</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="Ime" id="Ime" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="Prezime" class="col-sm-2 col-form-label">Prezime:</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="Prezime" id="Prezime" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="DatumRodjenja" class="col-sm-2 col-form-label">Datum rođenja:</label>
+                            <div class="col-sm-10">
+                                <input type="date" name="DatumRodjenja" id="DatumRodjenja" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <button type="submit" class="btn btn-primary mb-2">Pohrani osobu</button>
+                        </div>
+                    </form>
+                </td>
+                <td>
+                    <form method="post" action="@Url.Action("OsobaPost","Osoba")">
+                        <div class="form-group row">
+                            <label for="Ime" class="col-sm-2 col-form-label">Ime:</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="Ime" id="Ime" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="Prezime" class="col-sm-2 col-form-label">Prezime:</label>
+                            <div class="col-sm-10">
+                                <input type="text" name="Prezime" id="Prezime" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="DatumRodjenja" class="col-sm-2 col-form-label">Datum rođenja:</label>
+                            <div class="col-sm-10">
+                                <input type="date" name="DatumRodjenja" id="DatumRodjenja" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <button type="submit" class="btn btn-primary mb-2">Pohrani osobu</button>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+}
