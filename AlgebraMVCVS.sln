@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDemo", "WebDemo\WebDemo.csproj", "{F0232E33-28A6-453B-898B-DF954C337388}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_uvod", "MVC_uvod\MVC_uvod.csproj", "{AAD11584-A21A-4C68-B8F9-9A61081D947B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVC_uvod", "MVC_uvod\MVC_uvod.csproj", "{AAD11584-A21A-4C68-B8F9-9A61081D947B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_osobe", "MVC_osobe\MVC_osobe.csproj", "{465A26CF-D7FD-4002-A826-3CE3DB133713}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{AAD11584-A21A-4C68-B8F9-9A61081D947B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAD11584-A21A-4C68-B8F9-9A61081D947B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAD11584-A21A-4C68-B8F9-9A61081D947B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{465A26CF-D7FD-4002-A826-3CE3DB133713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{465A26CF-D7FD-4002-A826-3CE3DB133713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{465A26CF-D7FD-4002-A826-3CE3DB133713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{465A26CF-D7FD-4002-A826-3CE3DB133713}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
