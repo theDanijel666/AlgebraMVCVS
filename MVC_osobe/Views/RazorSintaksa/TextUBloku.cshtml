@@ -1,0 +1,16 @@
+﻿@{
+    string datum = DateTime.Now.ToShortDateString();
+    string poruka = "Dobrodošli :)";
+    @: Današnji datum: @datum
+    <br />
+    @poruka
+
+}
+
+@{
+    string vrijeme = DateTime.Now.ToShortTimeString();
+    string pozdrav = "Pozdrav svima :)";
+    <text>Vrijeme je : </text> @vrijeme
+    <br />
+    @pozdrav
+}

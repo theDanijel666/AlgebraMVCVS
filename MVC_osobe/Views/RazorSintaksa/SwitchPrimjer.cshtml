@@ -1,0 +1,40 @@
+﻿@{
+    string okruzenje = "prod";
+
+    switch (okruzenje)
+    {
+        case "test":
+            <text>
+                <h1>Testna web stranica</h1>
+            </text>
+            break;
+        case "prod":
+            <text>
+                <h1>Produkcijska web stranica</h1>
+            </text>
+            break;
+        default:
+            <text>
+                <h1>Nepoznati mod rada web stranice</h1>
+            </text>
+            break;
+    }
+
+}
+
+@switch (DateTime.Now.DayOfWeek)
+{
+    case DayOfWeek.Monday:
+        <span>Uf... Mrzim ponedjeljak :(</span>
+        break;
+    case DayOfWeek.Friday:
+        <span>Još malo vikend :o</span>
+        break;
+    case DayOfWeek.Saturday:
+    case DayOfWeek.Sunday:
+        <span> Napokon opuštanje vikendom :) </span>
+        break;
+    default:
+        <span> Dan kao i svaki drugi.... :O</span>
+        break;
+}

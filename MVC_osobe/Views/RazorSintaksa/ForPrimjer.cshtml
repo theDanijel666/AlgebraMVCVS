@@ -1,0 +1,21 @@
+﻿@for(int i = 0; i < 10; i++)
+{
+    @i.ToString() <br />
+}
+
+<h4>Prosti brojevi: </h4>
+@for(int i = 0; i < 1000000; i++)
+{
+    bool prost = true;
+    for (int j = 2; j < i; j++)
+    {
+        if (i % j == 0) {
+            prost = false;
+            break;
+        }
+    }
+    if(prost)
+    {
+        <span>@i.ToString()</span><br />
+    }
+}

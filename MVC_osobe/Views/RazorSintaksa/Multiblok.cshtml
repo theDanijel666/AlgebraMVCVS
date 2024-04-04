@@ -1,0 +1,16 @@
+﻿@{
+    string datum = DateTime.Now.ToShortDateString();
+    string poruka="Radimo s Razor sintaksom u MVC aplikaciji.";
+}
+
+<h2>Današnji datum je @datum nastavak HTML-a</h2>
+<h3>@poruka</h3>
+
+@{
+    string pozdrav = "Dobrodošli na našu web stranicu.";
+    string danUTjednu = DateTime.Now.DayOfWeek.ToString();
+    string pozdravnaporuka = pozdrav + " Danas je " + danUTjednu;
+}
+<p>
+    Poruka: @pozdravnaporuka
+</p>
