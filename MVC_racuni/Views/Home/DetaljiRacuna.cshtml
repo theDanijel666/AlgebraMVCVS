@@ -1,0 +1,59 @@
+﻿@model MVC_racuni.Models.Racun
+
+@{
+    ViewData["Title"] = "Detalji računa";
+}
+
+<h1>Detalji računa</h1>
+
+<div>
+    <h4>Račun</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BrojRacuna)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BrojRacuna)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DatumIzdavanja)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DatumIzdavanja)
+        </dd>
+    </dl>
+</div>
+
+<div class="row">
+    <p>
+        @Html.ActionLink("Dodaj novu stavku","NovastavkaRacuna",new {id=Model.BrojRacuna})
+    </p>
+    <table class="table table-striped">
+        <tr>
+            <th>Naziv</th>
+            <th>Količina</th>
+            <th>Jedinična cijena</th>
+            <th>Ukupna cijena</th>
+        </tr>
+        <tbody>
+            @foreach(var item in Model.Stavke)
+            {
+                <tr>
+                    <td>@item.Naslov</td>
+                    <td>@item.Kolicina.ToString("0.00")</td>
+                    <td>@item.JedinicanCijena.ToString("0.00") €</td>
+                    <td>@item.Ukupno().ToString("0.00") €</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<p>
+    Ukupno za platiti: @Model.Ukupno().ToString("0.00") € 
+</p>
+
+<div>
+    @Html.ActionLink("Izmjena", "IzmjenaRacuna", new { id = Model.BrojRacuna }) |
+    <a asp-action="Index">Povratak na popis računa</a>
+</div>

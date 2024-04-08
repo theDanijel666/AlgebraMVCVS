@@ -1,8 +1,47 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model List<Racun>
+@{
+    ViewData["Title"] = "Popis računa";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>@ViewBag.Title</h2>
+<hr />
+
+<p>
+    @Html.ActionLink("Kreiraj novi račun","NoviRacun")
+    @* <a href="~/Home/NoviRacun">Kreiraj novi račun</a>
+    <a asp-action="NoviRacun">Kreiraj novi račun</a> *@
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            Broj računa
+        </th>
+        <th>
+            Datum i vrijeme izdavanja
+        </th>
+        <th>
+            Ukupan iznos
+        </th>
+        <th></th>
+    </tr>
+    @foreach(var racun in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(item=>racun.BrojRacuna)
+            </td>
+            <td>
+                @Html.DisplayFor(item=>racun.DatumIzdavanja)
+            </td>
+            <td>
+                @racun.Ukupno().ToString("0.00") €
+            </td>
+            <td>
+                @Html.ActionLink("Detalji","DetaljiRacuna",new {id=racun.BrojRacuna}) |
+                @Html.ActionLink("Storno","StornoRacuna",new {id=racun.BrojRacuna}) |
+                @Html.ActionLink("Obriši račun","ObrisiRacun",new {id=racun.BrojRacuna})
+            </td>
+        </tr>
+    }
+</table>

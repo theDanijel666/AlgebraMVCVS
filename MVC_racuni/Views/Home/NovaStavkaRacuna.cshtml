@@ -1,0 +1,46 @@
+﻿@model MVC_racuni.Models.StavkaRacuna
+
+@{
+    ViewData["Title"] = "Nova stavka računa";
+    List<int> brojevi = ViewBag.Brojevi as List<int>;
+}
+
+<h1>Nova stavka računa</h1>
+
+<h4>Stavka Računa</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="NovaStavkaRacuna">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" name="BrojRacuna" value="@ViewBag.BrojRacuna" />
+            <input asp-for="Id" type="hidden" class="form-control" />
+            <div class="form-group">
+                <label asp-for="Naslov" class="control-label"></label>
+                <input asp-for="Naslov" class="form-control" />
+                <span asp-validation-for="Naslov" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Kolicina" class="control-label"></label>
+                <input asp-for="Kolicina" class="form-control" />
+                <span asp-validation-for="Kolicina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JedinicanCijena" class="control-label"></label>
+                <input asp-for="JedinicanCijena" class="form-control" />
+                <span asp-validation-for="JedinicanCijena" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Dodaj na račun" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Povratak na početak</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
